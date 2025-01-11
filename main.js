@@ -8,6 +8,7 @@ app.get('/', (req, res) => {
     res.json({msg: "hello World"})
 })
 
+// CRUD functionality of movies
 app.use('/movies', movieRoutes)
 
 app.listen(PORT, () => {
