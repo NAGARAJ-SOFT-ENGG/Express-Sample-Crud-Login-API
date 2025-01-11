@@ -5,7 +5,13 @@ export const MovieIndex = (req, res) => {
  };
 
  export const MovieCreate = (req, res) => {
-    res.send("Create a Movie");
+    // id, title, desc
+
+    console.log(req.body)
+
+    return res.json(req.body)
+
+    // create the movie info
  };
 
  export const MovieUpdate = (req, res) => {
