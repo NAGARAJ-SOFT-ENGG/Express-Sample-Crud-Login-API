@@ -1,12 +1,15 @@
-import { json } from "express";
 import Movie from "../models/movie.model.js";
 
 export const MovieIndex = async (req, res) => {
     try {
-        const movies = await Movie.find()
-        res.json(movies)
+        const movies = await Movie.find();
+        return res.json(movies);
     } catch (error) {
-        res.status(500).json({ message: error.message })
+        console.error(error);
+        return res.status(500).json({
+            message: 'Internal Server Error',
+            error: error.message || 'An unexpected error occurred'
+        });
     }
 };
 
@@ -54,14 +57,21 @@ export const MovieUpdate = async (req, res) => {
                 new: true,
             }
         );
-        
+
         res.status(200).json(updatedMovie)
     } catch (error) {
         res.status(400).json({ message: error.message })
     }
 };
 
-export const MovieDelete = (req, res) => {
-    res.send("Delete a Movie");
+export const MovieDelete = async (req, res) => {
+    const movieId = req.params.id
+
+    try {
+        await Movie.deleteOne({ _id: movieId })
+        res.json({ message: "Movie Deleted!!" })
+    } catch (error) {
+        res.status(500).json(message.error.message)
+    }
 };
 

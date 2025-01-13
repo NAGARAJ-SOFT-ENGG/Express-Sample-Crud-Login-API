@@ -13,8 +13,7 @@ provide a movie api for reactjs app
 
 ### database options
 
-1.SQL - (MySql, MariaDB, PostGreSQL)
-2.N0SQL - (MongoDB)
+1.N0SQL - (MongoDB)
 
 ### Creds
 UserName : nagarajnainar8458
