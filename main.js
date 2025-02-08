@@ -1,9 +1,13 @@
 import express from "express";
 import movieRoutes from './routes/movies.routes.js'
 import connectDB from "./lib/db.js";
+import  { swaggerUi, swaggerSpec } from"./Swagger/swagger.js";
 const app = express()
 const PORT = 6969
 
+
+//SwaggerUI
+app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Data Understanding MiddleWare
 app.use(express.json())
