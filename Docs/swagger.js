@@ -10,10 +10,10 @@ const options = {
             description: "API Documentation",
         },
     },
-    apis: ["./routes/movies.routes.js"],  // Path to API routes
+    apis: ["./routes/movies.routes.js", './routes/user.routes.js'],  // Path to API routes
 };
 
 const swaggerSpec = swaggerJsdoc(options);
-console.log("Swagger Spec Generated:", JSON.stringify(swaggerSpec, null, 2));
+// console.log("Swagger Spec Generated:", JSON.stringify(swaggerSpec, null, 2));
 
 export { swaggerUi, swaggerSpec };
