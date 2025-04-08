@@ -10,7 +10,7 @@ const options = {
             description: "API Documentation",
         },
     },
-    apis: ["./routes/movies.routes.js", './routes/user.routes.js'],  // Path to API routes
+    apis: ["./routes/movies.routes.js", './routes/user.routes.js', './routes/loginUser.routes.js'],  // Path to API routes
 };
 
 const swaggerSpec = swaggerJsdoc(options);

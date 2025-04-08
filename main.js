@@ -29,7 +29,7 @@ app.use('/user', userRoutes);
 app.use('/loginUser', loginUserRoutes);
 
 
-app.listen(PORT, () => {
+app.listen(PORT || 6969, () => {
     console.log(`the app was running at http://localhost${PORT}`)
 });
 
